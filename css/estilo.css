@@ -68,6 +68,7 @@ ul li a {
     padding:40px;
     margin-left:10px;
 }
+/*agregue hover para pestañas del nav*/
 nav ul li a:hover{
     color: #874E95;
 }
@@ -143,6 +144,7 @@ footer{
     left:50%;
     text-align:center;
 }
+/*agregue hover para pestañas del nav*/
 ul li a:hover{color:black}
 /* utilizo GRID para la pestaña "servicios".
 Diseño 4 secciones para mi pagina con GRID*/
@@ -202,6 +204,7 @@ header {
 
 section#blog{
     grid-area: blog;
+    /*agregue gradiente para el backgraound*/
     background-image: linear-gradient(to bottom, #D98FB1, #874E95) ;
     font-family: 'reboto';
     color: black;
