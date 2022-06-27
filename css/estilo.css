@@ -1,0 +1,235 @@
+/*elimino el margen por defecto*/
+*{ 
+    margin: 0;
+    padding: 0;
+}
+
+html, body { 
+    width: 100%;
+    height: 100vh;
+}
+/*elimino el formato por defecto*/
+a{text-decoration: none;
+color: black;
+font-weight: bold;
+    }
+/*elimino los punsto de la lista*/
+ul{list-style:none;
+}
+header{ 
+    width: 100%;
+    background-color: #D98FB1;
+    height: 100px;
+    display:flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    font-family: 'reboto';
+    grid-area: miHeader;
+ }
+    @font-face {
+        font-family: 'reboto'; 
+        src: url('../assets/font/Roboto-Italic.ttf');
+    }   
+.logoStyle{ 
+    width: 100px;
+    height: 70px;
+    margin:15px;
+    display: flex;
+}
+.nombreLogo{
+    width: 200px;
+    height: 100px;
+    font-size: 30px;
+    padding: 35px 0 35px 0;
+    /*background-color: rgb(226, 141, 43); le agregué color para visualizar el box*/
+    text-align: center;
+    box-sizing: border-box;/*recorter el nav*/
+    display: flex;         
+}
+ul  {display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+}
+nav{ 
+    width: 100%;
+    height: 100px;
+  /*  background-color: rgb(226, 43, 43);le agregué color para visualizar el box*/
+    text-align: center; 
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box; /*recorter el nav*/
+      
+}      
+ul li a {
+    display: flex;
+    padding-right: 50px;
+    padding:40px;
+    margin-left:10px;
+}
+nav ul li a:hover{
+    color: #874E95;
+}
+.presentation{
+    min-height:100%;
+    min-width: 100%;    
+    background-image: url("../assets/img/parapaletadecolores.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;/*se fija la imagen al hacer scroll*/
+    background-position: center center;
+    background-size: cover;
+    position: relative; 
+    font-family: 'reboto';
+    height: 900px;
+    width: 100%;
+    }
+.titulo2{
+    background-color: #D98FB1;
+    width: 800px;
+    height: 50px;
+    color: black;
+    text-align:center;
+    font-size: 35px;
+    position: absolute;
+    left:50px;
+    top:150px;
+    border: 5px solid #874E95;
+    } 
+.titulo3{
+    background-color: #D98FB1;
+    width: 500px;
+    height: 230px;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.6;
+    position: absolute;
+    top:350px;
+    left:50px;
+    border: 5px solid #874E95;
+   }
+section ol{list-style:none;
+    }
+footer{
+    background-color: #D98FB1;
+    max-width: 100%;
+    height: 150px;
+    font-family: 'reboto';
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    color:black;
+    position: relative;
+    grid-area: miFooter; 
+   }
+.footer_content{ 
+    display: flex;
+    justify-content:center;
+    flex-direction: row;
+    }
+.logo_style{ 
+    width: 20px;
+    height: 20px;
+   }
+.social{
+    display: flex;
+    justify-content:space-around;
+    flex-direction: row;
+}
+.footer_copyright{
+    position:absolute;
+    bottom:0;   
+    left:50%;
+    text-align:center;
+}
+ul li a:hover{color:black}
+/* utilizo GRID para la pestaña "servicios".
+Diseño 4 secciones para mi pagina con GRID*/
+
+/* diseño responsivo en dispositivos con resoluciones mayores 992px*/
+#wrapper{
+    display: grid;
+    grid-template-areas: 
+    "miHeader"
+    "intro"
+    "blog"
+    "miFooter"
+    ;
+        grid-template-columns: auto;
+        grid-template-rows: 100px 1fr 1fr 150px;
+        grid-row-gap:0px; 
+        grid-column-gap: 0;
+        width: 100%;
+        height: 100vh;
+    }
+/*aplico media queries para diseño responsivo en dispositivos de hasta 992px*/
+    @media screen and (min-width: 992px) {
+        #wrapper {
+          grid-template-areas:
+            "miHeader"
+            "intro"
+            "blog"
+            "miFooter";
+        width:100%; 
+        height:100vh;
+        }
+    /*colereo de rojo para distinguir resposivo en disposivos menores y mayores a 992*/
+        section div h3 {font-size: 50px;
+        color:red;}
+          }
+section#intro{
+    grid-area: intro;
+    background-color: #D98FB1;
+    background-image: url("../assets/img/portada3.jpg");
+    background-repeat: no-repeat;
+    background-size:  100% 100vh ;
+    background-position:bottom;
+    width: 100%;
+    height: 500px;
+    transform: scale(1.0, 1.0);
+         }    
+header {
+    grid-area: miHeader;
+}
+.portada{
+    font-family: 'reboto';
+    color: white;
+    font-size: 45px;
+    text-align: left;
+    margin:50px 0 0 50px;
+    }
+
+section#blog{
+    grid-area: blog;
+    background-image: linear-gradient(to bottom, #D98FB1, #874E95) ;
+    font-family: 'reboto';
+    color: black;
+    font-size: large;
+    height: auto;
+}
+/*utilizo flex para esta seccion de manera de centrar tres imagenes con un titulo y un texti*/
+.servicios{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: center;
+   }
+.tabla{
+    display:flex;
+    justify-content: center;
+    text-align:center;
+}
+footer#miFooter{
+    grid-area:miFooter;
+    background-color: #D98FB1;
+    font-family: 'reboto';
+    }
+div article { 
+    width: 400px;
+    height: auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    }
+div article img{ width: 100%;
+height: 200px;}
